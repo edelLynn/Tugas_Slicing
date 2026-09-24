@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap');
+
+:root { --ink:#19231c; --muted:#617065; --cream:#fffdf5; --leaf:#1f6b48; --leaf-dark:#12442e; --lime:#d8f27c; --peach:#ffd2a7; --line:#dfe8d9; --shadow:0 18px 50px rgba(19,61,37,.12); }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; color:var(--ink); background:var(--cream); font-family:'DM Sans',sans-serif; line-height:1.6; }
+header { position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:space-between; padding:18px clamp(24px,7vw,110px); background:rgba(255,253,245,.88); backdrop-filter:blur(14px); border-bottom:1px solid rgba(31,107,72,.1); }
+.logo { font-family:'Playfair Display',serif; font-size:1.55rem; font-weight:800; color:var(--leaf-dark); letter-spacing:-.06em; }
+nav ul { display:flex; gap:clamp(16px,3vw,34px); margin:0; padding:0; list-style:none; }
+nav a { color:var(--ink); font-weight:700; font-size:.92rem; text-decoration:none; }
+nav a:hover { color:var(--leaf); }
+.hero-section { position:relative; overflow:hidden; min-height:590px; display:flex; flex-direction:column; justify-content:center; padding:90px clamp(24px,12vw,190px); background:radial-gradient(circle at 82% 30%,var(--lime) 0 11%,transparent 11.2%),radial-gradient(circle at 76% 76%,var(--peach) 0 15%,transparent 15.2%),linear-gradient(120deg,#e7f6d4,#f8f6df 62%,#fff0d9); }
+.hero-section::after { content:'SEGER'; position:absolute; right:5%; bottom:-3.4rem; color:rgba(31,107,72,.08); font-size:clamp(5rem,17vw,16rem); font-weight:700; letter-spacing:-.1em; pointer-events:none; }
+h1,h2,h3 { line-height:1.1; }
+h1 { max-width:690px; margin:0; font-family:'Playfair Display',serif; font-size:clamp(2.8rem,6vw,5.4rem); letter-spacing:-.06em; }
+.hero-section h2 { margin:18px 0 6px; color:var(--leaf); font-size:clamp(1.15rem,2vw,1.5rem); }
+.hero-section p { max-width:535px; margin:0 0 28px; color:var(--muted); font-size:1.05rem; }
+button { width:fit-content; border:0; border-radius:999px; padding:14px 24px; background:var(--leaf); color:white; cursor:pointer; font:inherit; font-weight:700; box-shadow:0 8px 18px rgba(31,107,72,.23); transition:transform .2s ease,background .2s ease,box-shadow .2s ease; }
+button:hover { background:var(--leaf-dark); transform:translateY(-3px); box-shadow:0 12px 22px rgba(31,107,72,.28); }
+.layanan-section,.kontak-section { padding:90px clamp(24px,10vw,150px); }
+.layanan-section > h2,.kontak-section h2 { margin:0; font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.35rem); letter-spacing:-.05em; }
+.layanan-subtitle,.kontak-section > p { max-width:580px; margin:10px 0 38px; color:var(--muted); }
+.layanan-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.layanan-card { min-height:210px; padding:28px; border:1px solid var(--line); border-radius:22px; background:white; box-shadow:0 8px 24px rgba(25,35,28,.04); transition:transform .25s ease,box-shadow .25s ease; }
+.layanan-card:hover { transform:translateY(-8px); box-shadow:var(--shadow); }
+.layanan-card:nth-child(1) { border-top:5px solid #e67b45; }
+.layanan-card:nth-child(2) { border-top:5px solid #7eb862; }
+.layanan-card:nth-child(3) { border-top:5px solid #e0b847; }
+.layanan-card h3 { margin:0 0 12px; font-size:1.25rem; }
+.layanan-card p { margin:0; color:var(--muted); }
+.kontak-section { background:#173f2e; color:white; }
+.kontak-section h2 { color:var(--lime); }
+.kontak-section > p { color:#d2e2d6; }
+form { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:850px; }
+.form-group { display:grid; gap:7px; }
+.form-group:last-of-type { grid-column:1 / -1; }
+label { font-size:.9rem; font-weight:700; }
+input,textarea { width:100%; border:1px solid transparent; border-radius:12px; padding:13px 15px; background:rgba(255,255,255,.96); color:var(--ink); font:inherit; outline:none; }
+input:focus,textarea:focus { border-color:var(--lime); box-shadow:0 0 0 4px rgba(216,242,124,.18); }
+textarea { resize:vertical; }
+form button { background:var(--lime); color:var(--leaf-dark); box-shadow:none; }
+form button:hover { background:white; }
+footer { padding:26px 24px; background:#102a1e; color:#b7cbbd; text-align:center; font-size:.88rem; }
+footer p { margin:3px 0; }
+footer strong { color:white; }
+@media (max-width:700px) { header { padding:15px 22px; } nav ul { gap:14px; } nav a { font-size:.8rem; } .hero-section { min-height:520px; padding:70px 26px; } .layanan-section,.kontak-section { padding:65px 24px; } .layanan-grid,form { grid-template-columns:1fr; } .layanan-card { min-height:auto; } }
